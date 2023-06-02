@@ -3,8 +3,16 @@ import {Grid,TextField} from '@mui/material'
 import loginimg from '../assets/loginform.jpg'
 import googlbtn from '../assets/Google.png'
 import RegLogHeading from '../components/RegLogHeading'
+import { useNavigate } from 'react-router-dom';
 
 const Login = () => {
+  let navigate = useNavigate()
+  
+  let handleRun =()=>{
+    navigate("/")
+  }
+
+
   return (
     <Grid container spacing={2}>
       <Grid item xs={6} className='regflex'>
@@ -16,8 +24,8 @@ const Login = () => {
           <div className='fixregform '>
             <TextField className='textfield' id="outlined-basic" label="Email Address" type='email' variant="outlined"/>
             <TextField className='textfield' id="outlined-basic" label="Password" type='password' variant="outlined"/>
-            <button>Login to Continue</button>
-            <a className='link' href='#'>Don’t have an account ? <span>Sign up</span></a>
+            <button className='regbtn'>Login to Continue</button>
+            <a className='link' onClick={handleRun} href='#'>Don’t have an account ? <span>Sign up</span></a>
           </div>
         </form>
       </Grid>
