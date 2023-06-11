@@ -107,6 +107,7 @@ a{
 .fixregform .link span{
     color: #EA6C00;
     font-weight: 700;
+    cursor: pointer;
 }
 .logformtop{
     margin-top: 20px;
@@ -116,6 +117,7 @@ a{
     width: 220px;
     height:62px;
     margin-bottom: 40px;
+    cursor: pointer;
 }
 .googlebtn img{
     width: 100%;

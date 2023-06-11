@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import {Grid,TextField} from '@mui/material'
 import loginimg from '../assets/loginimg.png'
 import RegLogHeading from '../components/RegLogHeading'
-import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,sendEmailVerification } from "firebase/auth";
 import LoadingButton from '@mui/lab/LoadingButton';
 import { useNavigate } from 'react-router-dom';
 
@@ -18,6 +18,7 @@ let initialValue = {
 const Registration = () => {
   const auth = getAuth();
   let navigate = useNavigate()
+  
 
 
   let [values,setValues]= useState(initialValue)
@@ -42,14 +43,19 @@ const Registration = () => {
     })
 
     createUserWithEmailAndPassword(auth,email,password).then((user)=>{
-      // console.log(user)
+      console.log(user)
+      sendEmailVerification(auth.currentUser)
+    .then(() => {
+      // Email verification sent!
+      console.log("Verrified")
+    });
       setValues({
         email : "",
         fullName: "",
         password: "",
         loading:false
       })
-      navigate("/login")
+      // navigate("/login")
     })
   }
 
@@ -81,7 +87,7 @@ const Registration = () => {
             
 
             
-            <a className='link link2' onClick={handleRun} href='#'>Already  have an account ? <span>Sign In</span></a>
+            <p className='link link2' >Already  have an account ? <span onClick={handleRun}>Sign In</span></p>
           </div>
         </div>
       </Grid>
