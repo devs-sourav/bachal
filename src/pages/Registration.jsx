@@ -55,7 +55,7 @@ const Registration = () => {
         password: "",
         loading:false
       })
-      // navigate("/login")
+      navigate("/login")
     })
   }
 
