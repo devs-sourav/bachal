@@ -10,7 +10,6 @@ const ForgetPassword = () => {
   let [email, setEmail] = useState('');
   let navigate = useNavigate()
 
- 
 
   let handleSubmit = () => {
     console.log(email)

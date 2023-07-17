@@ -68,7 +68,7 @@ const Login = () => {
         loading:false,
       })
       // navigate("/login")
-      navigate("/home")
+      navigate("/bachal/home")
       console.log(user)
     }).catch((error) => {
       const errorCode = error.code;

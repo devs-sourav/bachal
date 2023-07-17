@@ -1,9 +1,14 @@
 *{
     margin: 0px ;
     padding: 0px ;
+    box-sizing:border-box;
 }
 a{
     text-decoration: none;
+    display: inline-block;
+}
+ul,li{
+    list-style: none;
 }
 /* ================================================================================
                     Registration Page Start Here
@@ -207,4 +212,100 @@ a{
   
 /* ================================================================================
                     Forgot Page End Here
+================================================================================= */
+
+
+/* ================================================================================
+                    Mavbar Page Start Here
+================================================================================= */
+.navbar{
+    height: 100vh;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    padding-left: 20px;
+}
+/* .nav_container{
+    padding: 35px 23px 35px 32px;
+    width: 100%;
+    height: 100vh;
+    background: #fff;
+} */
+.navbar .nav_container{
+    width: 100%;
+    height: 95vh;
+    background: #5F35F5;
+    border-radius: 20px;
+    padding-top: 30px;
+    text-align: center;
+}
+.img_div_profile{
+    width: 85px;
+    height: 85px;
+    margin: 0 auto;
+}
+.img_div_profile  a img{
+    width: 100%;
+} 
+.nav_menu{
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+
+}
+.nav_menu li .menu_icon{
+    font-size: 30px;
+    color: #BAD1FF;
+    cursor: pointer;
+}
+.nav_menu li .active{
+    font-size: 30px;
+    color: #5F35F5;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+.active::after {
+	content: '';
+	position: absolute;
+	left: -26px;
+	top: 44%;
+	width: 110px;
+	height: 60px;
+	background: #fff;
+	transform: translateY(-50%);
+	z-index: -1;
+	border-radius: 20px 0 0 20px;
+}
+.active::before {
+	content: '';
+	position: absolute;
+	left: 76px;
+	top: 44%;
+	width: 8px;
+	height: 60px;
+	background: #5F35F5;
+	transform: translateY(-50%);
+	z-index: 2;
+	border-radius: 25px 0 0 25px;
+	filter: drop-shadow(-2px 0px 4px #0000004d);
+}
+.nav_menu_exit{
+    margin-top: 120px;
+    display: flex;
+    flex-direction: column;
+    gap: 60px;
+}
+.nav_menu_exit li{
+    font-size: 30px;
+    color: #fff;
+    cursor: pointer;
+    transition: all linear 0.3s;
+}
+.nav_menu_exit li:hover{
+    color: #eb0202;
+}
+/* ================================================================================
+                    Navbar Page End Here
 ================================================================================= */
