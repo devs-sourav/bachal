@@ -2,9 +2,10 @@ import React, { useState } from 'react'
 import {Grid,TextField,Alert} from '@mui/material'
 import loginimg from '../assets/loginimg.png'
 import RegLogHeading from '../components/RegLogHeading'
-import { getAuth, createUserWithEmailAndPassword,sendEmailVerification } from "firebase/auth";
+import { getAuth, createUserWithEmailAndPassword,sendEmailVerification, updateProfile } from "firebase/auth";
+import { getDatabase, ref, set , push} from "firebase/database";
 import LoadingButton from '@mui/lab/LoadingButton';
-import { useNavigate,Link } from 'react-router-dom';
+import { useNavigate} from 'react-router-dom';
 import { RxEyeNone,RxEyeOpen } from "react-icons/rx";
 
 // font-family: 'Nunito', sans-serif;
@@ -20,6 +21,8 @@ let initialValue = {
 
 const Registration = () => {
   const auth = getAuth();
+  const db = getDatabase();
+
   let navigate = useNavigate()
   
 
@@ -74,12 +77,24 @@ const Registration = () => {
     })
 
     createUserWithEmailAndPassword(auth,email,password).then((user)=>{
-      console.log(user)
-    //   sendEmailVerification(auth.currentUser)
-    // .then(() => {
-    //   // Email verification sent!
-    //   console.log("Verrified")
-    // });
+      
+      updateProfile(auth.currentUser, {
+        displayName: values.fullName, photoURL: "https://i.ibb.co/VBsbBpv/avatar.png"
+      }).then(() => {
+        sendEmailVerification(auth.currentUser)
+        .then(() => {
+          set(ref(db, 'users/'+ user.user.uid), {
+            username: values.fullName,
+            email: values.email,
+            profile_picture : user.user.photoURL
+          });
+        
+        // Email verification sent!
+          console.log("Verrified")
+          console.log(user)
+        });
+      })
+
       setValues({
         email : "",
         fullName: "",
