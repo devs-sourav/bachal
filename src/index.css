@@ -223,7 +223,7 @@ ul,li{
     background: #fff;
     display: flex;
     align-items: center;
-    padding-left: 20px;
+    padding-left: 10px;
 }
 /* .nav_container{
     padding: 35px 23px 35px 32px;
@@ -314,9 +314,243 @@ ul,li{
 /* ================================================================================
                     Home Page Start Here
 ================================================================================= */
-.mthome{
-    margin: 20px 0 0 0;
+
+.MuiGrid-root .homeContainer{
+    margin: 16px 10px 0 0;
+    height: 50vh;
 }
-/* ================================================================================
+.searchbox input{
+    width: 100%;
+    padding: 15px 30px 15px 50px;
+    border-radius: 20px;
+    border: none;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    margin-bottom: 15px;
+    font-size: 18px;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 400;
+    color: #292929;
+}
+.searchbox input::placeholder{
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(61, 61, 61, 0.3);
+}
+.searchbox{
+    position: relative;
+}
+.searchbox .searchicon {
+	position: absolute;
+	left: 15px;
+	top: 40%;
+	transform: translateY(-50%);
+	font-size: 24px;
+}
+.searchbox .Search_dot_icon{
+    position: absolute;
+	right: 5px;
+	top: 40%;
+	transform: translateY(-50%);
+	font-size: 20px;
+    color: #5F35F5;
+}
+
+
+/*==============================================================================
                     Home Page End Here
+================================================================================= */
+
+
+/*==============================================================================
+                    Group Page End Here
+================================================================================= */
+.homeContainer .MuiGrid-container{
+    height: 50vh;
+}
+.group_container{
+    width: 100%;
+    height: 247px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    border-radius: 20px;
+    padding: 0 15px 10px 20px;
+    overflow: scroll;
+    position: relative;
+}
+.group_container .heading{
+    position: sticky;
+    left: 0;
+    top: 0;
+    background: #fff;
+    padding-top:10px;
+
+}
+.group_dot_icon {
+	position: absolute;
+	right: -8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+    color: #5F35F5;
+}
+.group_container .heading h3{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    color: #292929;
+}
+.group_profile_pic{
+    width: 45px;
+    height: 45px;
+}
+.group_profile_pic img{
+    width: 100%;
+    height: 100%;
+}
+.group_menu_container .group_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 11px;
+    padding-top: 11px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.219);
+}
+.group_menu_container .group_menu:first-child{
+    padding-top: 0;
+}
+.group_menu_container .group_menu:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.group_menu_container{
+    margin-top: 15px;
+}
+.group_menu .group_info{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+.group_title h3{
+    font-size: 15px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    color: #292929;
+}
+.group_title p{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 400;
+    color: rgba(77, 77, 77, 0.753);
+
+}
+.group-btn-cont button{
+    margin-top: 0;
+    padding: 5px 20px;
+}
+/*==============================================================================
+                    Group Page End Here
+================================================================================= */
+
+
+/*==============================================================================
+                    Friends Page Start Here
+================================================================================= */
+.friends_container{
+    width: 100%;
+    height: 314px;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    border-radius: 20px;
+    padding: 0 20px 10px 20px;
+    overflow: scroll;
+    position: relative;
+}
+.friends_container .heading{
+    position: sticky;
+    left: 0;
+    top: 0;
+    background: #fff;
+    padding-top:10px;
+    padding-bottom: 5px;
+
+}
+.friend_dot_icon {
+	position: absolute;
+	right: -8px;
+	top: 50%;
+	transform: translateY(-50%);
+	font-size: 20px;
+    color: #5F35F5;
+}
+.friends_container .heading h3{
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    color: #292929;
+}
+.friend_profile_pic{
+    width: 40px;
+    height: 40px;
+}
+.friend_profile_pic img{
+    width: 100%;
+    height: 100%;
+}
+.friend_menu_container .friend_menu{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 13.5px;
+    padding-bottom: 13.5px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.212);
+
+}
+.friend_menu_container .friend_menu:last-child{
+    padding-bottom: 0;
+    border-bottom: none;
+}
+.friend_menu_container .friend_menu:first-child{
+    padding-top: 10px;
+}
+
+.friend_menu .group_info{
+    display: flex;
+    column-gap: 10px;
+    align-items: center;
+}
+
+
+.friend_title h3{
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    color: #292929;
+}
+.friend_title p{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 400;
+    color: rgba(77, 77, 77, 0.753);
+
+}
+.friend-btn-cont p{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 500;
+    color: rgba(41, 41, 41, 0.507);
+}
+.user-btn-cont button{
+    margin-top: 0px;
+    padding: 5px 10px;
+}
+.friend_request_btn{
+    margin-left: 5px;
+}
+/*==============================================================================
+                    Friends Page End Here
 ================================================================================= */
