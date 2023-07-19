@@ -26,7 +26,7 @@ const Block = () => {
             </div>
             <div className='friend_menu'>
                     <div className='group_info'>
-                    <div className='friend_profile_pic'>
+                    <div className=' friend_profile_pic'>
                         <img src={Group1Pic}/>
                     </div>
                     <div className='friend_title'>
