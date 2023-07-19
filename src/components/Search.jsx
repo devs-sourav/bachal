@@ -1,5 +1,5 @@
 import React from 'react'
-import { AiOutlineSearch } from 'react-icons/Ai';
+import { AiOutlineSearch } from 'react-icons/ai';
 import { BiDotsVerticalRounded } from 'react-icons/bi';
 
 const Search = () => {

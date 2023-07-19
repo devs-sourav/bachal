@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsThreeDotsVertical } from 'react-icons/Bs'
+import { BsThreeDotsVertical } from 'react-icons/bs'
 import Group1Pic from '../assets/friend1.png'
 
 const Friends = () => {

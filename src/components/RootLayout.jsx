@@ -2,8 +2,8 @@ import React from 'react'
 import { Outlet } from 'react-router-dom'
 import Grid from '@mui/material/Grid';
 import profilePic from '../assets/profile.png'
-import { AiOutlineHome, AiFillSetting } from "react-icons/Ai";
-import { BsChatDotsFill, BsFillBellFill } from 'react-icons/Bs';
+import { AiOutlineHome, AiFillSetting } from "react-icons/ai";
+import { BsChatDotsFill, BsFillBellFill } from 'react-icons/bs';
 import { ImExit } from 'react-icons/im';
 import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
