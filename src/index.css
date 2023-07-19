@@ -13,7 +13,9 @@ ul,li{
 /* ================================================================================
                     Registration Page Start Here
 ================================================================================= */
-
+.MuiGrid-container{
+    height: 100vh;
+}
 .resizeimg{
     width: 100% ;
     height: 100vh;
@@ -222,8 +224,8 @@ ul,li{
     height: 100vh;
     background: #fff;
     display: flex;
-    align-items: center;
     padding-left: 10px;
+    padding-top: 15px;
 }
 /* .nav_container{
     padding: 35px 23px 35px 32px;
@@ -233,7 +235,7 @@ ul,li{
 } */
 .navbar .nav_container{
     width: 100%;
-    height: 95vh;
+    height: 650px;
     background: #5F35F5;
     border-radius: 20px;
     padding-top: 30px;
@@ -254,12 +256,12 @@ ul,li{
     gap: 50px;
 
 }
-.nav_menu li .menu_icon{
+.nav_menu .menu_icon a{
     font-size: 30px;
     color: #BAD1FF;
     cursor: pointer;
 }
-.nav_menu li .active{
+.nav_menu  .active{
     font-size: 30px;
     color: #5F35F5;
     cursor: pointer;
@@ -269,9 +271,9 @@ ul,li{
 .active::after {
 	content: '';
 	position: absolute;
-	left: -26px;
+	right: 0px;
 	top: 44%;
-	width: 110px;
+	width: 120px;
 	height: 60px;
 	background: #fff;
 	transform: translateY(-50%);
@@ -281,7 +283,7 @@ ul,li{
 .active::before {
 	content: '';
 	position: absolute;
-	left: 76px;
+	right: 0;
 	top: 44%;
 	width: 8px;
 	height: 60px;

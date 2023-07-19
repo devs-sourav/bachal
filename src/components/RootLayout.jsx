@@ -51,10 +51,10 @@ const RootLayout = () => {
                             
                        </div>
                         <ul className='nav_menu'>
-                            <li><Link to='/bachal/home' className={path.pathname=='/bachal/home' ? 'active' : 'menu_icon'}> <AiOutlineHome/> </Link></li>
-                            <li><Link to='/bachal/message' className={path.pathname=='/bachal/message' ? 'active' : 'menu_icon'}> <BsChatDotsFill/></Link></li>
-                            <li><Link to='/bachal/notification' className={path.pathname=='/bachal/notification' ? 'active' : 'menu_icon'}> <BsFillBellFill/></Link> </li>
-                            <li><Link to='/bachal/settings' className={path.pathname=='/bachal/settings' ? 'active' : 'menu_icon'}> <AiFillSetting/> </Link></li>
+                            <li  className={path.pathname=='/bachal/home' ? 'active' : 'menu_icon'}><Link to='/bachal/home'> <AiOutlineHome/> </Link></li>
+                            <li  className={path.pathname=='/bachal/message' ? 'active' : 'menu_icon'}><Link to='/bachal/message'> <BsChatDotsFill/></Link></li>
+                            <li  className={path.pathname=='/bachal/notification' ? 'active' : 'menu_icon'}><Link to='/bachal/notification'> <BsFillBellFill/></Link> </li>
+                            <li className={path.pathname=='/bachal/settings' ? 'active' : 'menu_icon'}><Link to='/bachal/settings'> <AiFillSetting/> </Link></li>
                         </ul>
 
                         <ul  className='nav_menu_exit'>
