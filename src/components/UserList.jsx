@@ -1,5 +1,5 @@
 import React from 'react'
-import { BsThreeDotsVertical } from 'react-icons/Bs'
+import { BiDotsVerticalRounded } from 'react-icons/bi'
 import Group1Pic from '../assets/user1.png'
 
 const UserList = () => {
@@ -7,7 +7,7 @@ const UserList = () => {
     <div className='friends_container'>
         <div className='heading'>
         <h3>User List</h3>
-        <BsThreeDotsVertical className='friend_dot_icon'/>
+        <BiDotsVerticalRounded className='friend_dot_icon'/>
         </div>
         <div className='friend_menu_container'>
             <div className='friend_menu'>
