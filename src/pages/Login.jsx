@@ -8,6 +8,9 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'react-toastify';
 import { RxEyeNone,RxEyeOpen } from "react-icons/rx";
 import { getAuth, signInWithEmailAndPassword, GoogleAuthProvider,signInWithPopup } from "firebase/auth";
+import { useDispatch } from 'react-redux'
+import { userData } from '../slices/user/UserSLice'
+import { useEffect } from 'react'
 
 let initialValue = {
   email : "",
@@ -21,10 +24,13 @@ let initialValue = {
 const Login = () => {
   let notify = (msg) => toast("🦄 " + msg);
   let navigate = useNavigate()
+  let dispatch = useDispatch()
   const auth = getAuth();
   const provider = new GoogleAuthProvider();
 
   let [values,setValues]= useState(initialValue)
+
+
 
   let handleChange=(e)=>{
     // console.log(e.target.name)
@@ -68,8 +74,14 @@ const Login = () => {
         loading:false,
       })
       // navigate("/login")
-      navigate("/bachal/home")
-      console.log(user)
+      if(!user.user.emailVerified){
+        notify("Please Verify Email for Login");
+      }else{
+        dispatch(userData(user.user))
+        localStorage.setItem("user",JSON.stringify(user.user))
+        navigate("/bachal/home")
+      }
+      // console.log(user)
     }).catch((error) => {
       const errorCode = error.code;
       // const errorMessage = error.message;
@@ -94,6 +106,11 @@ const Login = () => {
 
     });
   }
+  useEffect(()=>{
+    if(localStorage.getItem("user")){
+      navigate("/bachal/home")
+    }
+  },[])
 
   let handleGoggleLogin = ()=>{
     signInWithPopup(auth, provider)

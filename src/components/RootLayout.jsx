@@ -33,6 +33,7 @@ const RootLayout = () => {
            
             navigate("/login")
             notify("Logout Successful");
+            localStorage.removeItem("user")
 
           }).catch((error) => {
             // An error happened.

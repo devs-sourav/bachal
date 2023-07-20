@@ -52,7 +52,7 @@ const UserList = () => {
         
     }
     let handleCancel =(item)=>{
-        remove(ref(db, 'friendRequest/' ))
+        remove(ref(db, 'friendRequest/'))
     }
 
 
@@ -91,7 +91,7 @@ const UserList = () => {
             }
 
         </div>
-  </div>
+    </div>
   )
 }
 
