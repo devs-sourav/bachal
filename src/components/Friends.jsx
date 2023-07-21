@@ -2,16 +2,47 @@
 import React from 'react'
 // import { BsThreeDotsVertical } from 'react-icons/bs'
 import Group1Pic from '../assets/friend1.png'
-import { getDatabase, ref, onValue} from "firebase/database";
+import { getDatabase, ref, onValue, remove,set,push} from "firebase/database";
 import { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux'
-import { BiDotsVerticalRounded } from 'react-icons/bi'
+// import { BiDotsVerticalRounded } from 'react-icons/bi'
+
 
 
 const Friends = () => {
   const db = getDatabase();
   let [friends,setFriends] = useState([])
   let userData = useSelector((state)=>state.loggedUser.loginUser)
+
+
+  let handleUnfriend = (id)=>{
+    remove(ref(db, 'friends/' + id))
+    // console.log(id)
+  }
+
+  let handleBlock =(item)=>{
+    // console.log(item)
+
+    if(userData.uid == item.whosendid){
+      set(push(ref(db, 'block/')), {
+            blockedname: item.whoreceivename,
+            blockedid: item.whoreceiveid,
+            blockedbyname: item.whosendname,
+            blockedbyid: item.whosendid,
+        }).then(()=>{
+          remove(ref(db, 'friends/' + item.id))
+        })
+    }else{
+      set(push(ref(db, 'block/')), {
+        blockedname: item.whosendname,
+        blockedid: item.whosendid,
+        blockedbyname: item.whoreceivename,
+        blockedbyid: item.whoreceiveid,
+      }).then(()=>{
+        remove(ref(db, 'friends/' + item.id))
+      })
+    }
+  }
 
 
   useEffect(()=>{ 
@@ -23,6 +54,7 @@ const Friends = () => {
         if(item.val().whosendid == userData.uid || item.val().whoreceiveid == userData.uid){
 
           arr.push({...item.val(),id:item.key})
+          console.log(item.key)
         }
       })
 
@@ -64,8 +96,9 @@ const Friends = () => {
                   </div>
 
               </div>
-              <div className='friend-btn-cont'>
-                <p>Today, 8:56pm</p>
+              <div className='user-btn-cont'>
+                        <button onClick={()=>handleUnfriend(item.id)}>Unfriend</button>
+                        <button onClick={()=>handleBlock(item)} className='friend_request_btn'>Block</button>
               </div>
             </div>
           ))
