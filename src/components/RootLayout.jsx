@@ -9,10 +9,17 @@ import { getAuth, signOut } from "firebase/auth";
 import { useNavigate } from 'react-router-dom';
 import { Link,useLocation } from 'react-router-dom';
 import { toast } from 'react-toastify';
+// import {  useSelector } from 'react-redux';
+import {useSelector} from 'react-redux'
 
 
 const RootLayout = () => {
     let path = useLocation()
+
+    let userData = useSelector((state)=>state.loggedUser.loginUser)
+
+
+
     console.log(path.pathname)
     let notify = (msg) => toast.success(msg +" ", {
         position: "top-right",
@@ -49,7 +56,7 @@ const RootLayout = () => {
                     <div className='nav_container'>
                        <div className='img_div_profile'>
                             <Link to='/bachal/profile'><img src={profilePic}/></Link>
-                            
+                            <h4 className='profile_name'>{userData.displayName}</h4>
                        </div>
                         <ul className='nav_menu'>
                             <li  className={path.pathname=='/bachal/home' ? 'active' : 'menu_icon'}><Link to='/bachal/home'> <AiOutlineHome/> </Link></li>

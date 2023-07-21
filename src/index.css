@@ -10,6 +10,15 @@ a{
 ul,li{
     list-style: none;
 }
+::-webkit-scrollbar {
+    width: 8px;
+    cursor: pointer;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #cccccc;
+    border-radius: 10px;
+    cursor: pointer;
+}
 /* ================================================================================
                     Registration Page Start Here
 ================================================================================= */
@@ -220,6 +229,13 @@ ul,li{
 /* ================================================================================
                     Mavbar Page Start Here
 ================================================================================= */
+.profile_name{
+    color: #fff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    margin-top: 10px;
+}
 .navbar{
     height: 100vh;
     background: #fff;
@@ -250,10 +266,10 @@ ul,li{
     width: 100%;
 } 
 .nav_menu{
-    margin-top: 50px;
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 40px;
 
 }
 .nav_menu .menu_icon a{
@@ -293,8 +309,8 @@ ul,li{
 	border-radius: 25px 0 0 25px;
 	filter: drop-shadow(-2px 0px 4px #0000004d);
 }
-.nav_menu_exit{
-    margin-top: 120px;
+.nav_menu_exit {
+    margin-top: 100px;
     display: flex;
     flex-direction: column;
     gap: 60px;
@@ -316,7 +332,19 @@ ul,li{
 /* ================================================================================
                     Home Page Start Here
 ================================================================================= */
-
+.pending_request{
+    color: #808080;
+    font-size: 14px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 500;
+}
+.empty_request{
+    color: #b8b8b8;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 500;
+    margin-top: 10px;
+}
 .MuiGrid-root .homeContainer{
     margin: 16px 10px 0 0;
     height: 50vh;
@@ -380,7 +408,7 @@ ul,li{
     -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
     border-radius: 20px;
     padding: 0 15px 10px 20px;
-    overflow: scroll;
+    overflow-y: scroll;
     position: relative;
 }
 .group_container .heading{
@@ -461,6 +489,12 @@ ul,li{
 /*==============================================================================
                     Friends Page Start Here
 ================================================================================= */
+.friendsconfirmbtn{
+    background: green;
+}
+.friendsconfirmbtn:hover{
+    background: green;
+}
 .friends_container{
     width: 100%;
     height: 314px;
@@ -469,7 +503,7 @@ ul,li{
     -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
     border-radius: 20px;
     padding: 0 20px 10px 20px;
-    overflow: scroll;
+    overflow-y: scroll;
     position: relative;
 }
 .friends_container .heading{
