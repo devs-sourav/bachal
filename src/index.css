@@ -417,7 +417,15 @@ ul,li{
     top: 0;
     background: #fff;
     padding-top:10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+.group_container .heading button{
+    margin-top: 0;
+    padding: 8px 14px;
+    background: green;
 }
 .group_dot_icon {
 	position: absolute;
@@ -481,6 +489,12 @@ ul,li{
     margin-top: 0;
     padding: 5px 20px;
 }
+.modalbox .MuiFormControl-root{
+    width: 100%;
+}
+.modalbox button{
+    margin-top: 10px;
+}
 /*==============================================================================
                     Group Page End Here
 ================================================================================= */
@@ -491,6 +505,27 @@ ul,li{
 ================================================================================= */
 .friendsconfirmbtn{
     background: green;
+    cursor: initial;
+}
+.requestbtndesg{
+    background: green;
+}
+.friendsconfirmbtn:hover,.requestbtndesg:hover{
+    background: green;
+}
+.blockbtndes{
+    background: #b90000;
+}
+.blockbtndes:hover{
+    
+    background: #b90000;
+}
+.blockfirmbtn{
+    background: #b90000;
+    cursor: initial;
+}
+.blockfirmbtn:hover{
+    background: #b90000;
 }
 .friendsconfirmbtn:hover{
     background: green;
@@ -502,7 +537,7 @@ ul,li{
     -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
     -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
     border-radius: 20px;
-    padding: 0 20px 10px 20px;
+    padding: 0 10px 10px 20px;
     overflow-y: scroll;
     position: relative;
 }
@@ -513,7 +548,29 @@ ul,li{
     background: #fff;
     padding-top:10px;
     padding-bottom: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 
+}
+.cancelGroupReq{
+    background: red;
+    margin-top: 0;
+    padding: 5px 6px;
+    margin-left: 10px;
+}
+.groupbatch{
+    display: flex;
+    align-items: center;
+    
+}
+.friends_container .heading button{
+    margin-top: 0;
+    padding: 8px 14px;
+    background: green;
+}
+.friends_container .heading button:hover{
+    background: green;
 }
 .friend_dot_icon {
 	position: absolute;
@@ -562,30 +619,56 @@ ul,li{
 
 
 .friend_title h3{
-    font-size: 14px;
+    font-size: 13px;
     font-family: 'Poppins', sans-serif;
     font-family: 600;
     color: #292929;
 }
 .friend_title p{
-    font-size: 12px;
+    font-size: 11px;
     font-family: 'Poppins', sans-serif;
     font-family: 400;
     color: rgba(77, 77, 77, 0.753);
 
 }
-.friend-btn-cont p{
+.reqpending{
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 600;
+    color: rgba(77, 77, 77, 0.753);
+}
+.grpbtntab .memberbtn{
+    margin-left: 6px;
+    background: green;
+}
+.grpbtntab .memberbtn:hover{
+    background: green;
+}
+/* .friend-btn-cont p{
     font-size: 12px;
     font-family: 'Poppins', sans-serif;
     font-family: 500;
     color: rgba(41, 41, 41, 0.507);
-}
+} */
 .user-btn-cont button{
     margin-top: 0px;
-    padding: 5px 10px;
+    padding: 5px 8px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 500;
+}
+.grpbtntab button{
+    margin-top: 0px;
+    padding: 4px 7px;
+    font-size: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-family: 500;
 }
 .friend_request_btn{
     margin-left: 5px;
+}
+.unfrndbtndes,.unfrndbtndes:hover{
+    background: green;
 }
 /*==============================================================================
                     Friends Page End Here

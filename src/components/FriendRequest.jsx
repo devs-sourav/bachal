@@ -66,8 +66,8 @@ const FriendRequest = () => {
                     </div>
                     </div>
                     <div className='user-btn-cont'>
-                        <button onClick={()=>handleAccept(item)}>Confirm</button>
-                        <button className='friend_request_btn' onClick={()=>handleCancel(item.id)}>Cancel</button>
+                        <button className='requestbtndesg' onClick={()=>handleAccept(item)}>Confirm</button>
+                        <button className='friend_request_btn blockbtndes' onClick={()=>handleCancel(item.id)}>Cancel</button>
                     </div>
                     </div>
                 ))

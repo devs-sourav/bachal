@@ -1,6 +1,5 @@
 
 import React from 'react'
-// import { BsThreeDotsVertical } from 'react-icons/bs'
 import Group1Pic from '../assets/friend1.png'
 import { getDatabase, ref, onValue, remove,set,push} from "firebase/database";
 import { useEffect, useState } from 'react';
@@ -97,8 +96,8 @@ const Friends = () => {
 
               </div>
               <div className='user-btn-cont'>
-                        <button onClick={()=>handleUnfriend(item.id)}>Unfriend</button>
-                        <button onClick={()=>handleBlock(item)} className='friend_request_btn'>Block</button>
+                        <button className='unfrndbtndes' onClick={()=>handleUnfriend(item.id)}>Unfriend</button>
+                        <button onClick={()=>handleBlock(item)} className='friend_request_btn blockbtndes'>Block</button>
               </div>
             </div>
           ))
