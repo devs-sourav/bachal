@@ -670,6 +670,25 @@ ul,li{
 .unfrndbtndes,.unfrndbtndes:hover{
     background: green;
 }
+.btnbox button{
+    padding: 5px 8px;
+    margin-top: 0;
+}
+.btnbox button:first-child{
+    background: green;
+}
+.btnbox {
+    margin-top: 10px;
+}
+
+.btnbox button:last-child{
+    background: red;
+    margin-left: 10px;
+}
+.css-hhvo2v-MuiListItem-root {
+    padding-left: 0;
+    padding-right: 0;
+}
 /*==============================================================================
                     Friends Page End Here
 ================================================================================= */

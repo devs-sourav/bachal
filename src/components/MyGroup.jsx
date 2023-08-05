@@ -1,6 +1,6 @@
 import React from 'react'
-import Group1Pic from '../assets/friend1.png'
-import { getDatabase, ref, onValue,set,push} from "firebase/database";
+import Group1Pic from '../assets/group_1.png'
+import { getDatabase, ref, onValue,set,push,remove} from "firebase/database";
 import { useEffect, useState } from 'react';
 import {useSelector} from 'react-redux'
 import Modal from '@mui/material/Modal';
@@ -35,6 +35,7 @@ const MyGroup = () => {
     const db = getDatabase();
     let [myGroup,setMyGroup] = useState([])
     let [myGroupReq,setMyGroupReq] = useState([])
+    // let [flag,setFlag] = useState(0)
     let [groupInfo,setGroupInfo] = useState(groupData)
     const [open, setOpen] = useState(false);
     const [openreq, setOpenreq] = useState(false);
@@ -44,7 +45,7 @@ const MyGroup = () => {
     const handleOpenReq = (group) =>{
 
       setOpenreq(true);
-      useEffect(()=>{ 
+
         const myGroupreqref = ref(db, 'grouprequest');
         onValue(myGroupreqref, (snapshot) => {
           // const data = snapshot.val();
@@ -53,15 +54,15 @@ const MyGroup = () => {
             // console.log(userData.uid == item.val().adminId)
             // console.log(item.val().groupId == group.groupsId)
             if(userData.uid == item.val().adminId && item.val().groupId == group.groupsId){
-
-              arr.push(item.val())
+              console.log(userData.uid == item.val().adminId )
+              arr.push({...item.val(),groupreqid:item.key})
             }
           })
     
           setMyGroupReq(arr)
     
         });
-      },[])
+
         
     } 
     const handleClosereq = () => setOpenreq(false);
@@ -106,6 +107,11 @@ const MyGroup = () => {
           setOpen(false)
         })
     
+    }
+
+    let handleGroupDelete = (item)=>{
+      console.log(item)
+      remove(ref(db, 'grouprequest/' + item.groupreqid))
     }
 
     
@@ -185,11 +191,15 @@ const MyGroup = () => {
                                                 
                                                 </Typography>
                                                 {" — wants to join your group"}
+                                                <div className='btnbox'>
+                                                  <button>Accept</button>
+                                                  <button onClick={()=>handleGroupDelete(item)}>Cancel</button>
+                                                </div>
                                               </React.Fragment>
                                             }
                                           />
                                         </ListItem>
-                                        <Divider variant="inset" component="li" />
+                                        
                                       </div>
                                     ))
                                   }
