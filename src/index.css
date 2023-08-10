@@ -175,6 +175,9 @@ ul,li{
     color: #EA6C00;
 
 }
+.css-hhvo2v-MuiListItem-root {
+    margin: 0;
+}
 .forget-password-container {
     width: 400px;
     padding: 40px;
@@ -323,6 +326,10 @@ ul,li{
 }
 .nav_menu_exit li:hover{
     color: #eb0202;
+}
+.removeGroupMember{
+    margin-top: 10px;
+    background: red;
 }
 /* ================================================================================
                     Navbar Page End Here

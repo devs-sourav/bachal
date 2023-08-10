@@ -34,6 +34,7 @@ const Group = () => {
   let userData = useSelector((state)=>state.loggedUser.loginUser)
   let [groupInfo,setGroupInfo] = useState(groupData)
   let [group,setGroup] = useState([])
+  let [member,setMember] = useState([])
   let [groupMember,setGroupMember] = useState([])
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
@@ -52,6 +53,21 @@ const Group = () => {
 
       setGroup(arr)
     });
+  },[])
+  useEffect(()=>{ 
+    const memberref = ref(db, 'members/');
+    onValue(memberref, (snapshot) => {
+      // const data = snapshot.val();
+      let arr =[]
+      snapshot.forEach((item)=>{
+        if(item.val().adminId != userData.uid){
+          arr.push(item.val().groupId)
+        }
+      })
+
+      setMember(arr)
+    });
+    console.log(member)
   },[])
 
   useEffect(()=>{ 
@@ -102,10 +118,10 @@ const Group = () => {
     console.log(item)
   }
 
-  let handleCancel = (item)=>{
-    // remove(ref(db, 'grouprequest/' + item.groupId))
-    console.log(item)
-  }
+  // let handleCancel = (item)=>{
+  //   remove(ref(db, 'grouprequest/' + item.groupId))
+  //   console.log(item)
+  // }
 
 
 
@@ -153,8 +169,16 @@ const Group = () => {
               </div>
               <div className='group-btn-cont'>
                 {
+
+                  member.includes(item.groupId)
+
+                  ?
+                  <h4 className='reqpending'>Joined</h4>
+                  :
+
                   groupMember.indexOf(item.groupId) != -1 
                   ?
+
                   <div className='groupbatch'>
                     <h4 className='reqpending'>Pending</h4>
                     {/* <button className='cancelGroupReq' onClick={()=>handleCancel(item)}>Cancel</button> */}

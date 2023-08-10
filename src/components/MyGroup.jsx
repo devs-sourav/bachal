@@ -26,6 +26,18 @@ const style = {
     p: 4,
 };
 
+const style1 = {
+  position: 'absolute',
+  top: '50%',
+  left: '50%',
+  transform: 'translate(-50%, -50%)',
+  width: 400,
+  bgcolor: 'background.paper',
+  border: '2px solid #000',
+  boxShadow: 24,
+  p: 4,
+};
+
 let groupData = {
     groupName : "",
     groupTagline: "",
@@ -35,14 +47,40 @@ const MyGroup = () => {
     const db = getDatabase();
     let [myGroup,setMyGroup] = useState([])
     let [myGroupReq,setMyGroupReq] = useState([])
+    let [groupMember,setGroupMember] = useState([])
     // let [flag,setFlag] = useState(0)
     let [groupInfo,setGroupInfo] = useState(groupData)
     const [open, setOpen] = useState(false);
     const [openreq, setOpenreq] = useState(false);
+    const [openmem, setOpenmem] = useState(false);
     const handleOpen = () => setOpen(true);
     const handleClose = () => setOpen(false);
+    const handleCloseMember = () => setOpenmem(false);
     let userData = useSelector((state)=>state.loggedUser.loginUser)
-    const handleOpenReq = (group) =>{
+
+    let handleOpenMember = (member) =>{
+      console.log(member)
+      const memberGroup = ref(db, 'members');
+
+      onValue(memberGroup, (snapshot) => {
+        // const data = snapshot.val();
+        let arr =[]
+        snapshot.forEach(item=>{
+          if(userData.uid == item.val().adminId && item.val().groupId == member.groupsId){
+              arr.push({...item.val(), memberId:item.key})
+          }
+        })
+  
+        setGroupMember(arr)
+        
+        
+      });
+      console.log(groupMember)
+
+      setOpenmem(true);
+    }
+
+    let handleOpenReq = (group) =>{
 
       setOpenreq(true);
 
@@ -77,7 +115,6 @@ const MyGroup = () => {
             if(item.val().adminId == userData.uid){
     
               arr.push({...item.val(),groupsId:item.key})
-              console.log(item.key)
             }
           })
     
@@ -112,6 +149,18 @@ const MyGroup = () => {
     let handleGroupDelete = (item)=>{
       console.log(item)
       remove(ref(db, 'grouprequest/' + item.groupreqid))
+    }
+
+    let handleAcceptMember = (item)=>{
+      set(push(ref(db, 'members/')), {
+        ...item
+      }).then(()=>{
+        remove(ref(db, "grouprequest/" + item.groupreqid));
+      })
+    }
+
+    let removeGroupMember = (item)=>{
+      remove(ref(db, "members/" + item));
     }
 
     
@@ -192,7 +241,7 @@ const MyGroup = () => {
                                                 </Typography>
                                                 {" — wants to join your group"}
                                                 <div className='btnbox'>
-                                                  <button>Accept</button>
+                                                  <button onClick={()=>handleAcceptMember(item)}>Accept</button>
                                                   <button onClick={()=>handleGroupDelete(item)}>Cancel</button>
                                                 </div>
                                               </React.Fragment>
@@ -209,7 +258,48 @@ const MyGroup = () => {
                                 </Typography>
                             </Box>
                         </Modal>
-                        <button className='memberbtn'>Member</button>
+                        <button onClick={()=>handleOpenMember(item)} className='memberbtn'>Member</button>
+                        <Modal
+                          open={openmem}
+                          onClose={handleCloseMember}
+                          aria-labelledby="modal-modal-title"
+                          aria-describedby="modal-modal-description"
+                        >
+                          <Box sx={style1}>
+                            <Typography id="modal-modal-title" variant="h6" component="h2">
+                                Member Lists
+                            </Typography>
+                            {
+                              groupMember.map((member)=>(
+                                <List sx={{ width: '100%', maxWidth: 360, bgcolor: 'background.paper' }}>
+                              
+                                <ListItem alignItems="flex-start">
+                                  <ListItemAvatar>
+                                    <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" />
+                                  </ListItemAvatar>
+                                  <ListItemText
+                                    primary={member.userName}
+                                    secondary={
+                                      <React.Fragment>
+                                        <Typography
+                                          sx={{ display: 'inline' }}
+                                          component="span"
+                                          variant="body2"
+                                          color="text.primary"
+                                        >
+                                          of - {member.groupName} 
+                                          
+                                        </Typography>
+                                      </React.Fragment>
+                                    }
+                                  />
+                                  <button onClick={()=>removeGroupMember(member.memberId)} className='removeGroupMember'>Remove</button>
+                                </ListItem>
+                                </List>
+                              ))
+                            }
+                          </Box>
+                        </Modal>
                         </div>
                     </div>
 
