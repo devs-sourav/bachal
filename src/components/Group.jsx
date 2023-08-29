@@ -115,13 +115,28 @@ const Group = () => {
       userId: userData.uid,
       userName: userData.displayName,
     })
-    console.log(item)
   }
 
   // let handleCancel = (item)=>{
   //   remove(ref(db, 'grouprequest/' + item.groupId))
   //   console.log(item)
   // }
+
+  let handleCancelGroupRequest = (g)=>{
+    const groupRef = ref(db, "grouprequest");
+    let gid = "";
+    onValue(groupRef, (snapshot) => {
+      snapshot.forEach((item) => {
+        if (
+          item.val().userid == userData.uid &&
+          g.groupid == item.val().groupid
+        ) {
+          gid = item.key;
+        }
+      });
+    });
+    remove(ref(db, "grouprequest/" + gid));
+  }
 
 
 
@@ -181,6 +196,7 @@ const Group = () => {
 
                   <div className='groupbatch'>
                     <h4 className='reqpending'>Pending</h4>
+                    <button onClick={()=>handleCancelGroupRequest(item)} className='redbtnCancel'>Cancel</button>
                     {/* <button className='cancelGroupReq' onClick={()=>handleCancel(item)}>Cancel</button> */}
                   </div>
                   :

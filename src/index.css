@@ -39,9 +39,10 @@ ul,li{
     align-items: center;
     flex-wrap: wrap;
 }
-.regform{
+.regform {
     width: 76%;
-    
+    margin-top: 60px;
+    /* margin-bottom: auto; */
 }
 .regform .textfield{
     width: 100%;
@@ -252,13 +253,14 @@ ul,li{
     height: 100vh;
     background: #fff;
 } */
-.navbar .nav_container{
+.navbar .nav_container {
     width: 100%;
-    height: 650px;
+    height: 670px;
     background: #5F35F5;
     border-radius: 20px;
     padding-top: 30px;
     text-align: center;
+    padding-bottom: 20px;
 }
 .img_div_profile{
     width: 85px;
@@ -402,9 +404,29 @@ ul,li{
 
 
 /*==============================================================================
-                    Group Page End Here
+                    Group Page Start Here
 ================================================================================= */
+.message{
+    padding-top: 15px;
+    padding-bottom: 25px;
+}
+.grp_container2 {
+    height: 49vh;
+}
+.grp_container2 .group_container {
+    height: 49vh;
+}
+.redbtnCancel{
+    background: red;
+    padding: 3px 5px !important;
+    margin-left: 5px;
+
+}
 .homeContainer .MuiGrid-container{
+    height: 50vh;
+}
+.css-mhc70k-MuiGrid-root>.MuiGrid-item {
+    padding-left: 16px;
     height: 50vh;
 }
 .group_container{
@@ -698,4 +720,265 @@ ul,li{
 }
 /*==============================================================================
                     Friends Page End Here
+================================================================================= */
+
+
+/*==============================================================================
+                    Chatbox Page End Here
+================================================================================= */
+.chatBox {
+    height: 96vh;
+    width: 100%;
+    border-radius: 20px;
+    padding: 35px 35px 0 35px;
+    box-sizing: border-box;
+    box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -webkit-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    -moz-box-shadow: 0px 4px 4px 0px rgba(0,0,0,0.26);
+    margin-right: 40px;
+    font-family: 'Poppins', sans-serif;
+    /* overflow: hidden; */
+    position: relative;
+}
+.profileImg{
+    width: 70px;
+    height: 70px;
+    position: relative;
+}
+.profileImg img{
+    width: 100%;
+    height: 100%;
+}
+.profileImg  div{
+    width: 14px;
+    height: 14px;
+    background: #00fd00;
+    position: absolute;
+    right: 6px;
+    bottom: 8px;
+    border-radius: 50%;
+    filter: drop-shadow(-2px 0px 4px #0000004d);
+}
+.profileInfo{
+    display: flex;
+    align-items: center;
+    column-gap: 20px;
+}
+.ChatProfileText h2{
+    font-size: 22;
+    font-weight: 600;
+    cursor: pointer;
+}
+.ChatProfileText p{
+    font-size: 12;
+    font-weight: 400;
+}
+.dotChatProfile > *{
+    font-size: 24px;
+}
+.MessageProfile {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 10px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.253);
+}
+.ConversationBox{
+    padding: 25px 20px;
+    overflow-y: scroll;
+    width: 100%;
+    height: 70vh;
+}
+.ConversationBox .textItem1 p {
+    padding: 13px 40px;
+    background: #F1F1F1;
+    display: inline-block;
+    border-radius: 10px;
+    position: relative;
+    word-break: break-word;
+}
+.ConversationBox .textItem2 p{
+    padding: 13px 40px;
+    background: #5F35F5;
+    display: inline-block;
+    border-radius: 10px;
+    color: #fff;
+    position: relative;
+    word-break: break-word;
+}
+.ConversationBox .textItem1{
+    margin: 15px  0;
+    min-width: 370px;
+    position: relative;
+    margin: 20px  0 20px 0;
+}
+.ConversationBox .textItem2{
+    margin: 20px  0 20px auto;
+    text-align: end;
+    min-width: 370px;
+    /* white-space: normal;
+    word-wrap: break-word;
+    line-break: strict; */
+    position: relative;
+}
+.ConversationBox .textItem1 .send_text1::after  {
+	content: '';
+	position: absolute;
+	left: -7px;
+	bottom: 0;
+	width: 19px;
+	height: 15px;
+	background: #f1f1f1;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	border-radius: 5px;
+}
+/* .ConversationBox .textItem .send_text2{
+    margin-left: auto;
+} */
+.ConversationBox .textItem2 .send_text2::after {
+	content: '';
+	position: absolute;
+	right: -7px;
+	bottom: 0;
+	width: 19px;
+	height: 15px;
+	background: #5F35F5;
+	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+	border-radius: 5px;
+}
+.ConversationBox .textItem2 span{
+    position: absolute;
+    right: -5px;
+    bottom: -25px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.253);
+}
+.ConversationBox .textItem1 span{
+    position: absolute;
+    left: -5px;
+    bottom: -25px;
+    font-size: 12px;
+    font-weight: 500;
+    color: rgba(0, 0, 0, 0.253);
+}
+
+.ImgItem1 {
+    width: 180px;
+    height: 180px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ImgItem1 img{
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 10px;
+}
+.ImgItem2{
+    width: 180px;
+    height: 180px;
+    margin-left: auto;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+.ImgItem1 > div{
+    height: 100%;
+}
+.ImgItem2 > div {
+    height: 100%;
+    display: flex;
+    justify-content: end;
+}
+.ImgItem2 img{
+    /* width: 100%; */
+    height: 100%;
+    border-radius: 10px;
+}
+.SentboxMessage{
+    padding: 22px 0 0 0;
+    width: 100%;
+    border-top: 1px solid rgba(0, 0, 0, 0.26);
+}
+.SentboxMessage input{
+    width: 86%;
+    padding: 15px 0;
+    border: none;
+    background: #F1F1F1;
+    border-radius: 10px;
+}
+.SendInputText{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 90%;
+    margin: 0 30px;
+    padding: 20px 0 20px 0;
+    background: #fff;
+    border-top: 1px solid rgba(0, 0, 0, 0.253);
+}
+.SendInputText input{
+    padding: 0 70px 0 20px;
+    width: 90%;
+    height: 45px;
+    border-radius: 10px;
+    border: none;
+    background: #F1F1F1;
+    font-size: 15px;
+}
+.SendInputText .emojiIconsList .emojiIcon1{
+    position: absolute;
+    right: 107px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    color: #707070;
+    cursor: pointer;
+}
+.SendInputText .emojiIconsList .emojiIcon2{
+    position: absolute;
+    right: 80px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 20px;
+    cursor: pointer;
+    color: #707070;
+}
+.emojiIconsList{
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+}
+.planeIcon{
+    width: 45px;
+    height: 45px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    background: #5F35F5;
+    cursor: pointer;
+}
+.planeIcon .emojiIcon3{
+    color: #fff;
+}
+.audio2{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 20px 0;
+}
+.audio1{
+    margin: 20px 0;
+}
+.video2{
+    display: flex;
+    align-items: center;
+    justify-content: end;
+    margin: 20px 0;
+}
+.video1{
+    margin: 20px 0;
+}
+/*==============================================================================
+                    Chatbox Page End Here
 ================================================================================= */
