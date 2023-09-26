@@ -1,8 +1,9 @@
 import React from 'react'
 import Grid from '@mui/material/Grid';
-import Group from '../components/Group';
+// import Group from '../components/Group';
 import Friends from '../components/Friends';
 import ChatBox from '../components/ChatBox'
+import MsgGroup from '../components/MsgGroup';
 
 const Message = () => {
   return (
@@ -13,11 +14,11 @@ const Message = () => {
           <Grid container spacing={2}>
             <Grid item xs={12}>
               <div className='grp_container2'>
-                <Group/>
+                <MsgGroup/>
               </div>
             </Grid>
             <Grid item xs={12}>
-              <Friends/>
+              <Friends type="msg"/>
             </Grid>
           </Grid>
           </div>

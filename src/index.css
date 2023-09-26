@@ -741,8 +741,8 @@ ul,li{
     position: relative;
 }
 .profileImg{
-    width: 70px;
-    height: 70px;
+    width: 60px;
+    height: 60px;
     position: relative;
 }
 .profileImg img{
@@ -750,8 +750,8 @@ ul,li{
     height: 100%;
 }
 .profileImg  div{
-    width: 14px;
-    height: 14px;
+    width: 9px;
+    height: 9px;
     background: #00fd00;
     position: absolute;
     right: 6px;
@@ -764,13 +764,13 @@ ul,li{
     align-items: center;
     column-gap: 20px;
 }
-.ChatProfileText h2{
-    font-size: 22;
+.ChatProfileText h2 {
+    font-size: 19px;
     font-weight: 600;
     cursor: pointer;
 }
 .ChatProfileText p{
-    font-size: 12;
+    font-size: 12px;
     font-weight: 400;
 }
 .dotChatProfile > *{
@@ -790,15 +790,15 @@ ul,li{
     height: 70vh;
 }
 .ConversationBox .textItem1 p {
-    padding: 13px 40px;
-    background: #F1F1F1;
-    display: inline-block;
-    border-radius: 10px;
-    position: relative;
-    word-break: break-word;
+	padding: 5px 20px;
+	background: #F1F1F1;
+	display: inline-block;
+	border-radius: 10px;
+	position: relative;
+	word-break: break-word;
 }
 .ConversationBox .textItem2 p{
-    padding: 13px 40px;
+    padding: 5px 20px;
     background: #5F35F5;
     display: inline-block;
     border-radius: 10px;
@@ -806,20 +806,20 @@ ul,li{
     position: relative;
     word-break: break-word;
 }
-.ConversationBox .textItem1{
+.textItem1{
     margin: 15px  0;
-    min-width: 370px;
+    max-width: 80%;
     position: relative;
-    margin: 20px  0 20px 0;
+    margin: 35px  0 35px 0;
 }
-.ConversationBox .textItem2{
-    margin: 20px  0 20px auto;
-    text-align: end;
-    min-width: 370px;
-    /* white-space: normal;
-    word-wrap: break-word;
-    line-break: strict; */
-    position: relative;
+.textItem2 {
+	margin: 35px 0 35px auto;
+	text-align: end;
+	max-width: 80%;
+	/* white-space: normal; */
+	/* word-wrap: break-word; */
+	/* line-break: strict; */
+	position: relative;
 }
 .ConversationBox .textItem1 .send_text1::after  {
 	content: '';
@@ -846,28 +846,28 @@ ul,li{
 	clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
 	border-radius: 5px;
 }
-.ConversationBox .textItem2 span{
-    position: absolute;
-    right: -5px;
-    bottom: -25px;
-    font-size: 12px;
-    font-weight: 500;
-    color: rgba(0, 0, 0, 0.253);
+.ConversationBox .textItem2 span {
+	position: absolute;
+	right: -5px;
+	bottom: -20px;
+	font-size: 10px;
+	font-weight: 400;
+	color: rgba(0, 0, 0, 0.253);
 }
 .ConversationBox .textItem1 span{
     position: absolute;
     left: -5px;
-    bottom: -25px;
-    font-size: 12px;
-    font-weight: 500;
+    bottom: -20px;
+    font-size: 10px;
+    font-weight: 400;
     color: rgba(0, 0, 0, 0.253);
 }
 
 .ImgItem1 {
     width: 180px;
     height: 180px;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 .ImgItem1 img{
     /* width: 100%; */
@@ -878,8 +878,8 @@ ul,li{
     width: 180px;
     height: 180px;
     margin-left: auto;
-    margin-top: 10px;
-    margin-bottom: 10px;
+    /* margin-top: 10px;
+    margin-bottom: 10px; */
 }
 .ImgItem1 > div{
     height: 100%;
